@@ -1,0 +1,353 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.nav {
+  // border: 3px solid red;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.left {
+  flex: none;
+  width: 50%;
+  font-weight: 600;
+}
+
+.right {
+  flex: none;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item {
+  margin-left: 15px;
+}
+
+.burger {
+  display: none;
+}
+
+.welcome {
+  height: 250px;
+  background-color: rgb(142, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  align-content: center;
+}
+
+.main-area {
+  // border: 3px solid red;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+  // 設為100才會跟螢幕一樣寬
+}
+
+.main-container {
+  // border: 3px solid black;
+  justify-content: center;
+  width: 1200px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  // 加上wrap，一行百分比排不下便會自動換行
+}
+
+.small-box-area {
+  // border: 3px solid black;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.small-box {
+  // border: 3px solid blue;
+  // flex的預設
+
+  width: calc((100% - 40px) / 3);
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(142, 255, 255);
+}
+
+.small-box-img {
+  // border: 3px solid orange;
+  width: 80px;
+  height: 50px;
+  // overflow: clip;
+  // // // 超出就切掉，和hidden的比較
+
+  img {
+    width: 100%;
+    height: 100%;
+    // object-fit: cover;
+    // // 把圖片成寬
+  }
+}
+
+.big-box-area {
+  display: flex;
+  width: 100%;
+  // border: 3px solid black;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .img-star-text {
+    // border: 3px solid blue;
+    width: calc((100% - 100px) / 6);
+    display: flex;
+    position: relative;
+    overflow: clip;
+
+    &:nth-child(1),
+    &:nth-child(6) {
+      // border: 3px solid red;
+      width: calc((100% - 40px) / 3);
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      // height: 100%;
+      object-fit: cover;
+      position: relative;
+    }
+
+    .star {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .img-text {
+      width: 100%;
+      height: 15%;
+      background-color: rgba(255, 255, 255, 0.5);
+      // background-color: white;
+      // opacity: 0.5;
+      // 上面兩行寫在一起字也會變透明
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      // 文字的水平置中
+      align-content: center;
+      // 文字的垂直置中！
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1201px) {
+  .main-container {
+    // border: 3px solid red;
+    width: 90%;
+  }
+
+  .small-box {
+    // border: 3px solid black;
+    width: calc((100% - 20px) / 2);
+
+    &:nth-child(3) {
+      width: 100%;
+    }
+  }
+
+  .big-box-area {
+    .img-star-text {
+      // border: 3px solid blue;
+      width: calc((100% - 60px) / 4);
+
+      // 為什麼上一輪幫特定圖片設定的特別尺寸，這邊要再覆蓋一次才會work呢？
+      &:nth-child(1),
+      &:nth-child(6) {
+        // border: 3px solid red;
+        width: calc((100% - 60px) / 4);
+      }
+
+      &:nth-child(9),
+      &:nth-child(10) {
+        // border: 3px solid red;
+        width: calc((100% - 20px) / 2);
+      }
+
+      .star {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 360px) and (max-width: 601px) {
+  .main-container {
+    // border: 3px solid red;
+    width: 90%;
+  }
+
+  .nav {
+    height: 53px;
+    // 為了讓nav在小螢幕時不會因為在漢堡圖和x之間的轉變而一直切換高度
+    .right {
+      .item {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+
+  .x {
+    // border: 3px solid black;
+    text-align: right;
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    box-shadow: -3px 0px 5px 0px #aaa;
+    // 依序為：陰影左右位置（左負右正）和範圍（數值），上下位置和範圍，陰影模糊程度（越大越糊），陰影大小，顏色
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    // 不設z-index的話，從main-area開始，div.x會被覆蓋
+
+    .menu-item {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  .small-box-area {
+    .small-box {
+      width: 100%;
+    }
+  }
+  .big-box-area {
+    .img-star-text {
+      // border: 3px solid blue;
+      width: 100%;
+
+      &:nth-child(1),
+      &:nth-child(6),
+      &:nth-child(9),
+      &:nth-child(10) {
+        // border: 3px solid red;
+        width: 100%;
+      }
+
+      .star {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+// 橫向布局
+// .medium-box-area {
+//   // 原先這邊標籤寫錯，所以等同沒有這個標籤
+//   border: 3px solid green;
+//   display: flex;
+//   width: 100%;
+//   gap: 20px;
+//   align-items: center;
+// }
+
+// .medium-box {
+//   border: 3px solid purple;
+//   width: 33%;
+//   img {
+//     width: 100%;
+//   }
+// }
+
+// .small-medium-box {
+//   width: 16%;
+//   img {
+//     width: 100%;
+//   }
+// }
+
+// 原本的直向布局
+// .big-box-area {
+//   // border: 3px solid black;
+//   width: 100%;
+//   display: flex;
+//   gap: 20px;
+
+//   .bigger-box {
+//     border: 3px solid red;
+//     width: 34.5%;
+//     height: 50%;
+//     gap: 20px;
+//     display: flex;
+//     flex-direction: column;
+
+//     .img-star-text {
+//       position: relative;
+
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         // object-fit: cover;
+//         margin-bottom: 20px;
+//         position: relative;
+//       }
+
+//       img.star {
+//         width: 30px;
+//         height: 30px;
+//         position: absolute;
+//         right: 0;
+//         top: 0;
+//       }
+
+//       .big-box-text {
+//         width: 100%;
+//         height: 20%;
+//         text-align: center;
+//         background-color: white;
+//         opacity: 0.5;
+//         position: absolute;
+//         bottom: 0;
+//       }
+//     }
+//   }
+
+//   .big-box {
+//     border: 3px solid black;
+//     width: 16.5%;
+//     height: 50%;
+//     // overflow: clip;
+//     // column-gap: 20px;
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//       margin-bottom: 20px;
+//     }
+//   }
+// }

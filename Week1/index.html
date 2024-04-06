@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week1作業</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <div class="left">My Website</div>
+        <div class="right">
+          <!-- <div class="desktop-menu"> -->
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <!-- </div> -->
+
+          <div class="burger">
+            <img
+              onclick="popUp()"
+              src="./styles/burger_line_list_menu_nav_icon.png"
+            />
+          </div>
+
+          <div class="x" style="display: none">
+            <img onclick="closeDown()" src="./styles/x_icon.png" />
+            <div class="menu-item">Item1</div>
+            <div class="menu-item">Item2</div>
+            <div class="menu-item">Item3</div>
+            <div class="menu-item">Item4</div>
+          </div>
+        </div>
+      </div>
+      <div class="welcome">
+        <div class="text">Welcom to MyHome</div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="main-area">
+        <div class="main-container">
+          <div class="small-box-area">
+            <div class="small-box">
+              <div class="small-box-img">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+              </div>
+              <div class="small-box-text">Promotion 1</div>
+            </div>
+            <div class="small-box">
+              <div class="small-box-img">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+              </div>
+              <div class="small-box-text">Promotion 2</div>
+            </div>
+            <div class="small-box">
+              <div class="small-box-img">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+              </div>
+              <div class="small-box-text">Promotion 3</div>
+            </div>
+          </div>
+          <!-- 
+          <div class="menu">
+            <img src="./styles/x_icon.png" />
+            <div class="menu-item">Item 1</div>
+            <div class="menu-item">Item 2</div>
+            <div class="menu-item">Item 3</div>
+            <div class="menu-item">Item 4</div>
+          </div> -->
+          <!-- 原本寫的橫向big-box-area -->
+          <!-- <div class="medium-box-area">
+            <div class="medium-box medium-box1">
+              <img
+                src="./styles/mason-kimbarovsky-X_d7m2r70bA-unsplash_600 x 400.png"
+                alt="movie girl"
+              />
+            </div>
+            <div class="small-medium-box medium-box2">
+              <img
+                src="./styles/mason-kimbarovsky-X_d7m2r70bA-unsplash_600 x 400.png"
+                alt="movie girl"
+              />
+            </div>
+            <div class="small-medium-box medium-box3">
+              <img
+                src="./styles/mason-kimbarovsky-X_d7m2r70bA-unsplash_600 x 400.png"
+                alt="movie girl"
+              />
+            </div>
+            <div class="small-medium-box medium-box4">
+              <img
+                src="./styles/mason-kimbarovsky-X_d7m2r70bA-unsplash_600 x 400.png"
+                alt="movie girl"
+              />
+            </div>
+            <div class="small-medium-box medium-box5">
+              <img
+                src="./styles/mason-kimbarovsky-X_d7m2r70bA-unsplash_600 x 400.png"
+                alt="movie girl"
+              />
+            </div>
+          </div> -->
+
+          <!-- 多div的直向big-box-area -->
+          <!-- <div class="big-box-area">
+            <div class="bigger-box">
+              <div class="img-star-text">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+                <img
+                  class="star"
+                  src="./styles/star icon_48px.png.png"
+                  alt="star icon"
+                />
+                <div class="big-box-text-area">
+                  <div class="big-box-text">Title 1</div>
+                </div>
+              </div>
+              <div class="img-star-text">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+                <img
+                  class="star"
+                  src="./styles/star icon_48px.png.png"
+                  alt="star icon"
+                />
+              </div>
+
+              <div class="big-box">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+              </div>
+              <div class="big-box">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+              </div>
+              <div class="big-box">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+              </div>
+              <div class="big-box">
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+                <img
+                  src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+                  alt="ocean"
+                />
+              </div>
+            </div>
+          </div> -->
+
+          <div class="big-box-area">
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 1</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 2</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 3</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 4</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 5</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 6</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 7</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 8</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 9</div>
+            </div>
+            <div class="img-star-text">
+              <img
+                src="./styles/ocean_christoffer-engstrom-wc9avd2RaN0-unsplash.jpg"
+              />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text">Title 10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let pop = document.querySelector(".burger");
+      let close = document.querySelector(".x");
+
+      function popUp() {
+        pop.style.display = "none";
+        close.style.display = "block";
+      }
+
+      function closeDown() {
+        pop.style.display = "block";
+        close.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
