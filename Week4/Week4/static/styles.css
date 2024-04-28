@@ -1,0 +1,55 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "sans-serif";
+}
+
+header h1 {
+  /* h1預設大px和bold，這邊設定更大的px蓋過原本的px，但保留bold */
+  font-size: 40px;
+  color: white;
+  background-color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+body div#main {
+  padding: 40px;
+}
+body div#main .form-group-upper {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+body div#main .form-group {
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+}
+body div#main .form-group:nth-child(4) {
+  margin: 25px;
+}
+body div#main .form-group .form-control {
+  border: 1.25px solid black;
+  border-radius: 5%;
+  width: 20%;
+  height: 30px;
+}
+body div#main .sign-in-button {
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.msg {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.signout {
+  text-align: center;
+  font-size: 30px;
+}/*# sourceMappingURL=styles.css.map */
