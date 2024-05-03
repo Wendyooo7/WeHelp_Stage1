@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week3作業_Task3</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <div class="left">My Website</div>
+        <div class="right">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+
+          <div class="burger">
+            <img
+              onclick="popUp()"
+              src="./styles/burger_line_list_menu_nav_icon.png"
+            />
+          </div>
+
+          <div class="x" style="display: none">
+            <img onclick="closeDown()" src="./styles/x_icon.png" />
+            <div class="menu-item">Item1</div>
+            <div class="menu-item">Item2</div>
+            <div class="menu-item">Item3</div>
+            <div class="menu-item">Item4</div>
+          </div>
+        </div>
+      </div>
+      <div class="welcome">
+        <div class="text">Welcom to MyHome</div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="main-area">
+        <div class="main-container">
+          <div class="small-box-area">
+            <div class="small-box">
+              <div class="small-box-img">
+                <img class="sboxImg" />
+              </div>
+              <div class="small-box-text"></div>
+            </div>
+            <div class="small-box">
+              <div class="small-box-img">
+                <img class="sboxImg" />
+              </div>
+              <div class="small-box-text"></div>
+            </div>
+            <div class="small-box">
+              <div class="small-box-img">
+                <img class="sboxImg" />
+              </div>
+              <div class="small-box-text"></div>
+            </div>
+          </div>
+
+          <div class="big-box-area">
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+            <div class="img-star-text">
+              <img class="bBoxImg" />
+              <img class="star" src="./styles/star icon_48px.png.png" />
+              <div class="img-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let pop = document.querySelector(".burger");
+      let close = document.querySelector(".x");
+
+      function popUp() {
+        pop.style.display = "none";
+        close.style.display = "block";
+      }
+
+      function closeDown() {
+        pop.style.display = "block";
+        close.style.display = "none";
+      }
+
+      // week3 程式碼
+      async function getData() {
+        try {
+          // 利用fetch進行連線並取得資料
+          let response = await fetch(
+            "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment-1"
+          );
+
+          let data = await response.json();
+          return data;
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      // 使用 async/await 確保在訪問 newData.data 之前，newData 已經被解析
+      async function processData() {
+        let newData = await getData();
+
+        // 小盒子
+        for (let i = 0; i < newData.data.results.length; i++) {
+          let stitle = newData.data.results[i].stitle;
+          let firstPic = newData.data.results[i].filelist;
+          let splitHttp = firstPic.split("" + "https://");
+          let fullHttp = "https://" + splitHttp[1];
+
+          if (i < 3) {
+            sBoxImg[i].setAttribute("src", fullHttp);
+            sBoxText[i].textContent = stitle;
+          }
+        }
+
+        // 大盒子
+        for (let i = 0; i < newData.data.results.length; i++) {
+          let stitle = newData.data.results[i + 3].stitle;
+          let firstPic = newData.data.results[i + 3].filelist;
+          let splitHttp = firstPic.split("" + "https://");
+          let fullHttp = "https://" + splitHttp[1];
+
+          if (i < 13) {
+            bBoxImg[i].setAttribute("src", fullHttp);
+            bBoxText[i].textContent = stitle;
+          }
+        }
+      }
+
+      processData();
+
+      // 小盒子
+      let sBox = document.querySelectorAll(".small-box-img");
+      let sBoxImg = document.querySelectorAll(".sboxImg");
+      let sBoxText = document.querySelectorAll(".small-box-text");
+
+      // 大盒子
+      let bBox = document.querySelectorAll(".img-star-text");
+      let bBoxImg = document.querySelectorAll(".bBoxImg");
+      let bBoxText = document.querySelectorAll(".img-text");
+    </script>
+  </body>
+</html>
