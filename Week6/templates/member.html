@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="/static/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header><h1>歡迎光臨，這是會員頁</h1></header>
+    <main id="member-main">
+      <div class="msg">{{ name }}，歡迎登入系統</div>
+      <div class="a-link-div">
+        <a href="http://127.0.0.1:8000/signout">登出系統</a>
+      </div>
+      <hr />
+
+      <form
+        action="/createMessage"
+        method="POST"
+        onsubmit="return checkContentInput();"
+      >
+        <label class="add-msgs" for="add-msgs">快來留言吧</label>
+        <br />
+        <label for="new-msg">內容</label>
+        <input name="new_msg" type="text" class="form-control" id="new-msg" />
+        <br />
+        <input
+          name="submit-button"
+          type="submit"
+          class="sign-button"
+          id="submit-button"
+          value="送出"
+        />
+      </form>
+
+      <hr />
+      <div class="msgs">
+        {% for message in messages %}
+        <p>{{ message.member_id }} : {{ message.content }}</p>
+        {% endfor %}
+      </div>
+    </main>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
