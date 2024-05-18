@@ -1,0 +1,76 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "sans-serif";
+}
+
+header h1 {
+  /* h1預設大px和bold，這邊設定更大的px蓋過原本的px，但保留bold */
+  font-size: 40px;
+  color: white;
+  background-color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+body div#main {
+  padding: 40px 0;
+}
+body div#main .form-group-upper {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+body div#main .form-group {
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+}
+
+.form-control {
+  border: 1.25px solid black;
+  border-radius: 5%;
+  width: 20%;
+  height: 30px;
+}
+
+.sign-button {
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+hr {
+  margin: 40px 0;
+}
+
+#member-main {
+  text-align: center;
+  font-size: 30px;
+}
+#member-main .msg {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+#member-main .add-msgs {
+  font-weight: bold;
+}
+#member-main #submit-button {
+  margin-top: 10px;
+}
+
+main.error {
+  text-align: center;
+  font-size: 30px;
+  padding: 40px;
+}
+
+.query {
+  font-weight: bold;
+}
+
+#show-query-username,
+#show-update-name {
+  height: 60px;
+}/*# sourceMappingURL=styles.css.map */

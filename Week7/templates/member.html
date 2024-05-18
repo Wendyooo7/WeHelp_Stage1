@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="/static/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header><h1>歡迎光臨，這是會員頁</h1></header>
+    <main id="member-main">
+      <div class="msg">{{ name }}，歡迎登入系統</div>
+      <div class="a-link-div">
+        <a href="http://127.0.0.1:8000/signout">登出系統</a>
+      </div>
+      <hr />
+
+      <form
+        action="/createMessage"
+        method="POST"
+        onsubmit="return checkContentInput();"
+      >
+        <label class="add-msgs" for="add-msgs">快來留言吧</label>
+        <br />
+        <label for="new-msg">內容</label>
+        <input name="new_msg" type="text" class="form-control" id="new-msg" />
+        <br />
+        <input
+          name="submit-button"
+          type="submit"
+          class="sign-button"
+          id="submit-button"
+          value="送出"
+        />
+      </form>
+
+      <hr />
+      <div class="msgs">
+        {% for message in messages %}
+        <p>{{ message.member_id }} : {{ message.content }}</p>
+        {% endfor %}
+      </div>
+
+      <hr />
+
+      <!-- 拿掉form標籤改用div，避免form標籤送出資料到後端後，自動跳轉至指定處理的路由去，也不用寫JS去e.preventDefault -->
+      <div>
+        <label for="username" class="query">查詢會員姓名</label>
+        <br />
+        <input
+          id="query-string"
+          type="text"
+          name="username"
+          class="form-control"
+        />
+        <button id="query-button" class="sign-button">查詢</button>
+        <div id="show-query-username"></div>
+      </div>
+
+      <div>
+        <label for="name" class="query">更新我的姓名</label>
+        <br />
+        <input
+          id="update-name"
+          name="update_name"
+          type="text"
+          class="form-control"
+          placeholder="輸入新的姓名"
+        />
+        <button id="update-button" class="sign-button">更新</button>
+        <div id="show-update-name"></div>
+      </div>
+    </main>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
