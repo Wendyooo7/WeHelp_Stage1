@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="/static/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header><h1>歡迎光臨，請註冊登入系統</h1></header>
+    <main>
+      <div id="main">
+        <form
+          action="/signup"
+          method="POST"
+          onsubmit="return checkSignUpInput();"
+        >
+          <div class="form-group-upper">註冊帳號</div>
+          <div class="form-group">
+            <label for="name">姓名</label>
+            <input name="name" type="text" class="form-control" id="name" />
+          </div>
+          <div class="form-group">
+            <label for="username">帳號</label>
+            <input
+              name="username"
+              type="text"
+              class="form-control"
+              id="username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">密碼</label>
+            <input
+              name="password"
+              type="text"
+              class="form-control"
+              id="password"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              name="sign-in-button"
+              type="submit"
+              class="sign-button"
+              id="sign-in-button"
+              value="註冊"
+            />
+          </div>
+        </form>
+        <hr />
+        <form
+          action="/signin"
+          method="POST"
+          onsubmit="return checkSignInInput();"
+        >
+          <div class="form-group-upper">登入系統</div>
+          <div class="form-group">
+            <label for="username">帳號</label>
+            <input
+              name="username"
+              type="text"
+              class="form-control"
+              id="username2"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">密碼</label>
+            <input
+              name="password"
+              type="text"
+              class="form-control"
+              id="password2"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              name="sign-in-button"
+              type="submit"
+              class="sign-button"
+              id="sign-in-button"
+              value="登入"
+            />
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
